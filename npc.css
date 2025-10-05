@@ -1,0 +1,42 @@
+@font-face {
+    font-family: 'old';
+    src: url('old.TTF');
+}
+
+body{
+    background-color: black;
+    font-family: 'old';
+}
+.npc{
+    min-width: 300px;
+    min-height: 300px;
+    background: url('violet.jpg');
+    background-position: center;
+    background-size: cover;
+}
+#conversation{
+    min-width: 800px;
+    height: fit-content;
+    min-height: 300px;
+    background-color: white;
+    border: solid 2px black;
+    border-radius: 10px;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: row;
+    overflow: none;
+    max-width: 600px;
+}
+#continue{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+.words{
+    max-height: 200px;
+    margin-left: 10px;
+    font-size: 30px;
+}
