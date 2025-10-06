@@ -10,12 +10,12 @@ body{
 .npc{
     min-width: 300px;
     min-height: 300px;
-    background: url('violet.jpg');
+    background: url('sai.jpg');
     background-position: center;
     background-size: cover;
 }
 #conversation{
-    min-width: 800px;
+    min-width: 900px;
     height: fit-content;
     min-height: 300px;
     background-color: white;
@@ -25,7 +25,7 @@ body{
     top: 60%;
     left: 50%;
     transform: translateX(-50%);
-    display: flex;
+    display: none;
     flex-direction: row;
     overflow: none;
     max-width: 600px;
@@ -39,4 +39,23 @@ body{
     max-height: 200px;
     margin-left: 10px;
     font-size: 30px;
+}
+#conversation button{
+    font-family: 'old';
+    font-size: 20px;
+    border: solid 2px black;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    padding: 5px;
+    cursor: pointer;
+    padding-bottom: 10px;
+}
+#saiBtn{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'old';
+    font-size: 20px;
 }

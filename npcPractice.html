@@ -5,12 +5,40 @@
     </head>
 <body>
 
+<button id="saiBtn" onclick="startSaiConvo()">Start convo with sai</button>
+
 <div id="conversation">
     <div class="npc"></div>
-    <p class="words">Thank you for coming on such short notice!</p>
-    <button id="continue">continue</button>
+    <p id="words" class="words">Thank you for coming on such short notice!</p>
+    <button onclick="continueSaiConversation()" id="continue">continue</button>
 </div>
 
+<script>
+let saiConversartion = [
+    "Thank you for coming on such short notice!",
+    "I need your help with something very important.",
+    "There is a dark force threatening our village.",
+    "Will you help us fight against it?",
+    "Great! I knew I could count on you.",
+    "Let's prepare for the battle ahead."
+];
+
+let saiLine = 0;
+
+function startSaiConvo() {
+    document.getElementById("conversation").style.display = "flex";
+    document.getElementById('words').innerText = saiConversartion[saiLine];
+}
+function continueSaiConversation() {
+    saiLine++;
+    if (saiLine < saiConversartion.length) {
+        document.getElementById('words').innerText = saiConversartion[saiLine];
+    } else {
+        document.getElementById("conversation").style.display = "none";
+        saiLine = 0; // Reset for next time
+    }   
+}
+</script>
 
 
 </body>
