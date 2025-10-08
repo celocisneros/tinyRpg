@@ -4,40 +4,43 @@
         <link rel="stylesheet" href="npc.css">
     </head>
 <body>
-
-<button id="saiBtn" onclick="startSaiConvo()">Start convo with sai</button>
-
-<div id="conversation">
-    <div class="npc"></div>
-    <p id="words" class="words">Thank you for coming on such short notice!</p>
-    <button onclick="continueSaiConversation()" id="continue">continue</button>
+<div id="npcBox">
+    <div id="npcName"></div>
+    <div id="npcText"></div>
+    <button id="talkButton" onclick="itachi.talk()">Talk</button>
+    <button id="byeButton" onclick="itachi.bye()">Bye</button>
 </div>
 
 <script>
-let saiConversartion = [
-    "Thank you for coming on such short notice!",
-    "I need your help with something very important.",
-    "There is a dark force threatening our village.",
-    "Will you help us fight against it?",
-    "Great! I knew I could count on you.",
-    "Let's prepare for the battle ahead."
-];
-
-let saiLine = 0;
-
-function startSaiConvo() {
-    document.getElementById("conversation").style.display = "flex";
-    document.getElementById('words').innerText = saiConversartion[saiLine];
-}
-function continueSaiConversation() {
-    saiLine++;
-    if (saiLine < saiConversartion.length) {
-        document.getElementById('words').innerText = saiConversartion[saiLine];
-    } else {
-        document.getElementById("conversation").style.display = "none";
-        saiLine = 0; // Reset for next time
+let itachi = {
+    name: "Itachi",
+    greeting: "Hello there, I am Itachi Uchiha.",
+    farewell: "Goodbye, see you later.",
+    convo: [
+        "It's a beautiful day, isn't it?",
+        "Have you heard about the latest news in the village?",
+        "I enjoy reading books about history and strategy.",
+        "Do you have any hobbies or interests you'd like to share?"
+    ],
+    index: 0,
+    talk: function() {
+        if (this.index < this.convo.length) {
+            document.getElementById('npcText').innerText = this.convo[this.index];
+            this.index++;
+        } else {
+            document.getElementById('npcText').innerText = "I have nothing more to say.";
+        }
+    },
+    bye: function() {
+        document.getElementById('npcText').innerText = this.farewell;
+        this.index = 0; // Reset conversation index
     }   
-}
+};
+
+document.getElementById('npcName').innerText = itachi.name;
+document.getElementById('npcText').innerText = itachi.greeting;
+
+
 </script>
 
 
