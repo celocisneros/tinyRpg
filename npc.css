@@ -1,0 +1,31 @@
+body{
+    background-color: lightgreen;
+    font-size: 30px;
+}
+#npcBox{
+    background-color: grey;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    border-radius: 10px;
+    border: solid 2px white;
+    font-weight: bolder;
+    color: gainsboro;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    gap: 20px;
+}
+#npcBox button{
+    padding: 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 20px;
+}
+#npcName{
+    color: pink;
+}
